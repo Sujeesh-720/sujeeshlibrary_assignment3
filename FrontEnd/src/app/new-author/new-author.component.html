@@ -1,0 +1,48 @@
+<div class="card">
+    <form #addauthor="ngForm" (ngSubmit)="AddAuthor()">
+        <div class="card-header">
+            <b>{{title}}</b>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Author Id</label></td>
+                            <td><input type="text" name="a_id" [(ngModel)]="authorItem.authorId" minlength="1" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Author Name</label></td>
+                            <td><input type="text" name="a_name" [(ngModel)]="authorItem.authorName" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Author Place Of Birth</label></td>
+                            <td><input type="text" name="a_birth" [(ngModel)]="authorItem.authorBirth" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Author Known As</label></td>
+                            <td><input type="text" name="a_known" [(ngModel)]="authorItem.authorKnown" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Author Description</label></td>
+                            <td><input type="text" name="a_desc" [(ngModel)]="authorItem.description" minlength="5" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Age</label></td>
+                            <td><input type="text" name="a_age" [(ngModel)]="authorItem.Age" minlength="2" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Author imageUrl</label></td>
+                            <td><input type="text" name="a_image" [(ngModel)]="authorItem.imageUrl" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Submit" [disabled]="addauthor.form.invalid" /></td>
+                        </tr>
+                    </tbody>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

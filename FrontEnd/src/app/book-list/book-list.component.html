@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header">
+        <b>{{title}}</b>
+
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary"
+                            (click)= 'toggleImage()'>
+
+                                {{showImage? 'Hide': 'show'}} Image
+                            </button>
+                        </th>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>5 Star Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let book of books'>
+
+                        <td><img *ngIf = 'showImage'
+                                 [src] = 'book.imageUrl'
+                                 [title] = 'book.bookName'
+                                 [style.width.px] = 'imageWidth'
+                                 [style.margin.px] = 'imageMargin'>
+                        </td>
+                                 <td>{{book.bookName}}</td>
+                                 <td>{{book.bookAuthor}}</td>
+                                 <td>{{book.bookGenre}}</td>
+                                 <td>{{book.starRating}}</td>
+                                 <td>
+                                    <button class="btn btn-warning" style="cursor:pointer" *ngIf= _auth.loggedIn() (click)="editBook(book)" style="margin-left: 20px;"> Edit</button>
+                                    <button class="btn btn-danger" style="cursor:pointer" *ngIf=_auth.loggedIn()  (click)="deleteBook(book)"> Delete</button>
+                                    <button class="btn btn-primary" style="cursor:pointer"  (click)="singleBook(book)"> Read More</button>
+                                  </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+

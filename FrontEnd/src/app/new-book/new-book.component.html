@@ -1,0 +1,50 @@
+<div class="card">
+    <form #addbook="ngForm"  (ngSubmit)="AddBook()">
+        <div class="card-header">
+            <b>{{title}}</b>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Book Id</label></td>
+                            <td><input type="text" name="b_id" [(ngModel)]="bookItem.bookId" minlength="1" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Book Name</label></td>
+                            <td><input type="text" name="b_name" [(ngModel)]="bookItem.bookName" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Book Author</label></td>
+                            <td><input type="text" name="b_author" [(ngModel)]="bookItem.bookAuthor" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Book Genre</label></td>
+                            <td><input type="text" name="b_genre" [(ngModel)]="bookItem.bookGenre" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Book Description</label></td>
+                            <td><input type="text" name="b_desc" [(ngModel)]="bookItem.description" minlength="5" required/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><label>Book starRating</label></td>
+                            <td><input type="text" name="b_rating" [(ngModel)]="bookItem.starRating" minlength="1" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Book imageUrl</label></td>
+                            <td><input type="text" name="b_image" [(ngModel)]="bookItem.imageUrl" minlength="3" required/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Submit" [disabled]="addbook.form.invalid"/></td>
+                        </tr>
+                    </tbody>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
